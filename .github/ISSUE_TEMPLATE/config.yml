@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a Question
+    url: https://github.com/bobcat47/NaviEU/discussions
+    about: Please ask general questions in our Discussions forum
+  - name: Read the Documentation
+    url: https://github.com/bobcat47/NaviEU/tree/main/docs
+    about: Check our documentation before opening an issue
+  - name: View the Roadmap
+    url: https://github.com/bobcat47/NaviEU/blob/main/ROADMAP.md
+    about: See what features are already planned
