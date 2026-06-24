@@ -68,6 +68,23 @@ We believe that:
 - **Turn-by-Turn Voice Guidance** — Web Speech API reads directions aloud
 - **4 Transport Modes** — Car, walking, cycling, public transit
 
+### 🏔️ 3D Terrain Visualization
+
+Experience Europe's landscape in true 3D:
+
+| Feature | Description |
+|---------|-------------|
+| **Real 3D Terrain** | Elevation data from global DEM tiles (Terrarium/Mapzen) |
+| **Pitch & Rotate** | Tilt up to 85° and rotate 360° for dramatic mountain views |
+| **Height Exaggeration** | 1x / 1.5x / 2x / 3x terrain exaggeration toggle |
+| **Hillshading** | Dynamic shadows and highlights on terrain surfaces |
+| **3D Buildings** | Extruded building footprints where data available |
+| **Atmospheric Sky** | Realistic sky gradient for immersive 3D feel |
+| **Live Elevation** | Shows elevation in meters at map center |
+| **Zero extra download** | Lazy-loaded on demand — doesn't bloat initial load |
+
+Tap the **3D button** (purple mountain icon) on the right-side controls to enter 3D mode. Best experienced zoomed into mountain regions like the Alps, Pyrenees, or Dolomites.
+
 ### 📍 Trail Memory System — *Signature Innovation*
 
 | Feature | What It Does |
@@ -101,7 +118,7 @@ We believe that:
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                     PRESENTATION LAYER                       │
-│  Map (Leaflet) │ Routing │ Explorer │ Trail/Fog/Achievements │
+│  2D Map (Leaflet) │ 3D Terrain (MapLibre) │ Routing │ Trail │
 └─────────────────────────────────────────────────────────────┘
                               │
 ┌─────────────────────────────────────────────────────────────┐
@@ -112,6 +129,11 @@ We believe that:
 ┌─────────────────────────────────────────────────────────────┐
 │                     TRAIL ENGINE                             │
 │  Recording │ Compression │ Fog of War │ Loop Detection      │
+└─────────────────────────────────────────────────────────────┘
+                              │
+┌─────────────────────────────────────────────────────────────┐
+│                     3D TERRAIN ENGINE                        │
+│  DEM Tiles (Terrarium) │ Hillshade │ 3D Buildings │ Sky     │
 └─────────────────────────────────────────────────────────────┘
                               │
 ┌─────────────────────────────────────────────────────────────┐
@@ -127,10 +149,12 @@ We believe that:
 | Layer | Technology |
 |-------|-----------|
 | **Frontend** | React 19 + TypeScript + Vite |
-| **Map Engine** | Leaflet (DOM/raster) |
+| **2D Map Engine** | Leaflet (DOM/raster) |
+| **3D Map Engine** | MapLibre GL (WebGL + terrain) |
 | **Routing** | Valhalla API |
 | **Geocoding** | Nominatim (OSM) |
 | **Map Tiles** | CartoDB Voyager / Dark Matter |
+| **Terrain DEM** | Mapzen Terrarium tiles (AWS) |
 | **Styling** | Tailwind CSS 3.4 + shadcn/ui |
 | **Animations** | GSAP + Framer Motion |
 | **Offline DB** | Dexie.js (IndexedDB) |
@@ -152,6 +176,15 @@ We believe that:
 
 **[🚀 Live Demo](https://gxybaghyui6v2.kimi.page)**
 
+### Try 3D Terrain
+
+1. Open the map
+2. Zoom into a mountain region (Alps, Pyrenees, Dolomites)
+3. Tap the **purple 3D button** on the right controls
+4. Use **pitch buttons** to tilt the view (up to 85°)
+5. Use **rotate buttons** to spin around the terrain
+6. Try **2x or 3x exaggeration** for dramatic effect
+
 ---
 
 ## 🗺️ Roadmap
@@ -163,21 +196,26 @@ We believe that:
 - [x] PWA — installable on any device
 - [x] Zero-telemetry architecture
 
-### 🚧 V2 — Trail Intelligence *(Current)*
+### 🚧 V2 — Trail Intelligence + 3D *(Current)*
 - [x] All 14 trail features (see above)
 - [x] Fog of War exploration
 - [x] 14 discovery badges
+- [x] **3D terrain visualization** with pitch/rotate
+- [x] Hillshading + 3D building extrusion
+- [x] Live elevation display
 
-### 🔮 V3 — Community & AI
-- [ ] User profiles
-- [ ] Share trails (QR/link)
-- [ ] Enhanced AI routing
-- [ ] 3D terrain visualization
+### 🔮 V3 — Community & Enhanced AI
+- [ ] User profiles with persistent data
+- [ ] Share trails (QR code / link)
+- [ ] Enhanced AI routing with terrain awareness
+- [ ] Weather-aware routing
+- [ ] European long-distance trail networks
 
 ### 🔮 V4 — Mesh Network
 - [ ] Reticulum Protocol
-- [ ] Peer-to-peer sharing
-- [ ] Emergency beacon
+- [ ] Peer-to-peer position sharing
+- [ ] Emergency beacon system
+- [ ] Offline messaging between nearby users
 
 ---
 
@@ -186,6 +224,8 @@ We believe that:
 NaviEU is released under the [MIT License](LICENSE).
 
 Map data © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright), licensed under [ODbL](https://opendatacommons.org/licenses/odbl/).
+
+Terrain data © [Mapzen](https://registry.opendata.aws/terrain-tiles/) / [AWS Open Data](https://aws.amazon.com/opendata/).
 
 ---
 
