@@ -1,7 +1,7 @@
 # NaviEU Product Roadmap
 
-> **Last Updated:** 2025-06-24  
-> **Status:** V1 Released (v0.1.0) — V2 In Planning
+> **Last Updated:** 2026-06-24
+> **Status:** V1 Released (v0.1.0) — V2 Released (v0.2.0) — V3 In Planning
 
 This roadmap outlines NaviEU's development trajectory. It is a living document — priorities evolve based on community feedback, contributor availability, and technical discovery.
 
@@ -37,29 +37,67 @@ Every feature in NaviEU maps to one of four strategic pillars:
 - [x] Local SQLite storage
 - [x] Clean Architecture codebase
 
-### V1.x Maintenance Track
-
-| Version | Focus | Target |
-|---------|-------|--------|
-| v0.1.1 | Bug fixes, stability improvements | July 2025 |
-| v0.1.2 | Additional European language voice packs | August 2025 |
-
 ---
 
-## 🚧 V2 — Exploration Intelligence
+## ✅ V2 — Exploration Intelligence (Released: v0.2.0)
 
 *Goal: Transform NaviEU from a navigation tool into an exploration companion.*
 
-**Status:** Planning phase — [Help wanted](https://github.com/bobcat47/NaviEU/labels/help%20wanted)
+### 🗻 3D Terrain Visualization
+- [x] Real-time 3D terrain rendering with MapLibre GL (Terrarium DEM)
+- [x] Pitch & rotate controls for immersive exploration
+- [x] Adjustable height exaggeration (1× / 1.5× / 2× / 3×)
+- [x] Hillshading with dynamic sunlight simulation
+- [x] 3D building extrusion for city exploration
+- [x] Atmospheric sky rendering
+- [x] Live elevation readout at cursor
+- [x] Lazy-loaded performance (code-splitting)
 
-### Trail Memory System (Signature Feature)
-- [ ] **Coverage Tracking** — Real-time logging of explored areas with configurable precision
-- [ ] **Coverage Heatmaps** — Visual overlay showing exploration density (daily/weekly/all-time)
-- [ ] **Explored Region Detection** — Algorithmic identification of "new" vs "already explored" areas
-- [ ] **Duplicate Prevention Nudges** — Subtle UI suggestions toward uncharted paths
-- [ ] **Journey History** — Searchable, filterable log of all navigation sessions
-- [ ] **Trail Statistics** — Distance, time, elevation, coverage percentage per session
-- [ ] **GPX Trail Management** — Import, organize, and overlay historical trails
+### 🥾 Trail Memory System (Signature Feature)
+- [x] Coverage tracking (fog of war) with configurable precision
+- [x] Coverage visualization — dynamically revealed areas on map
+- [x] Loop detection with completion achievements
+- [x] Adaptive GPS sampling (battery-aware)
+- [x] Douglas-Peucker path compression
+- [x] Auto-save sessions to IndexedDB
+- [x] Exploration statistics (distance, duration, elevation, area, speed)
+- [x] Achievement system with unlockable badges
+- [x] Color-coded trail heatmaps (speed/elevation)
+- [x] Session management (browse, rename, delete, replay)
+- [x] Return-to-start navigation
+
+### 👤 User Profiles
+- [x] Persistent user profiles with localStorage
+- [x] Avatar selection (themed explorers)
+- [x] Explorer stats dashboard (lifetime stats)
+- [x] Privacy-first local-only storage
+
+### 🗺️ Map & UX Improvements
+- [x] Dual map engine (Leaflet 2D + MapLibre GL 3D)
+- [x] Seamless 2D/3D mode switching
+- [x] Search bar redesign (fixed overlap issues)
+- [x] CartoDB tile layers (Voyager light + Dark Matter)
+- [x] Smoother map pan/zoom interactions
+- [x] GPS tracking stability improvements
+- [x] Progressive Web App (PWA) support
+- [x] Onboarding flow for first-time users
+- [x] Settings menu with customizable preferences
+- [x] NaviBot assistant for guidance
+
+### V2.x Maintenance Track
+
+| Version | Focus | Target |
+|---------|-------|--------|
+| v0.2.1 | Bug fixes, map stability improvements | July 2025 |
+| v0.2.2 | Additional basemap layers, UI refinements | August 2025 |
+
+---
+
+## 🚧 V3 — Exploration Intelligence v2
+
+*Goal: Enhanced navigation with route sharing, multi-stop planning, and deeper exploration tools.*
+
+**Status:** Planning phase — [Help wanted](https://github.com/bobcat47/NaviEU/labels/help%20wanted)
 
 ### Enhanced Navigation
 - [ ] **Multi-stop Route Planning** — Up to 10 waypoints with optimal ordering
@@ -67,19 +105,21 @@ Every feature in NaviEU maps to one of four strategic pillars:
 - [ ] **Custom Route Preferences** — User-defined weights for speed, scenery, elevation, surface
 - [ ] **Route Sharing** — Share routes via QR code, local network (no internet), or file export
 - [ ] **Route Collections** — Save and organize favorite routes into folders
+- [ ] **Breadcrumb Navigation** — Drop waypoints and navigate back without a planned route
 
 ### Exploration Mode
-- [ ] **Breadcrumb Navigation** — Drop waypoints and navigate back without a planned route
 - [ ] **Wander Mode UI** — Map-centric interface optimized for destination-free exploration
 - [ ] **Discovery Auto-Logging** — Automatically record interesting points encountered
 - [ ] **Landmark-Based Directions** — "Turn left at the church" instead of "Turn left in 200m"
 - [ ] **Scenic Route Discovery** — Community and AI-suggested beautiful paths
+- [ ] **Exploration Goals** — "Visit 80% of Paris 4th arrondissement" with progress tracking
 
 ### Enhanced POI System
 - [ ] **European POI Database** — Curated points of interest across all European countries
 - [ ] **Local Scoring Algorithm** — On-device ranking of POIs by relevance and quality
 - [ ] **POI Collections** — Themed collections: "Best viewpoints in the Alps", "Roman ruins in France"
 - [ ] **User POI Notes** — Add personal notes and photos to any POI (stored locally)
+- [ ] **POI Detail Cards** — Rich information with photos and community reviews
 
 ### Platform & Performance
 - [ ] **Background Navigation** — Improved background location handling
@@ -87,12 +127,12 @@ Every feature in NaviEU maps to one of four strategic pillars:
 - [ ] **Map Data Delta Updates** — Incremental map updates instead of full re-downloads
 - [ ] **Faster Map Downloads** — Parallel chunk downloading, resumable transfers
 
-**Target Release:** Q4 2025  
-**Milestone:** [V2 Tracking Issue](https://github.com/bobcat47/NaviEU/milestone/2)
+**Target Release:** Q4 2025
+**Milestone:** [V3 Tracking Issue](https://github.com/bobcat47/NaviEU/milestone/3)
 
 ---
 
-## 🔮 V3 — Local AI Guide
+## 🔮 V4 — Local AI Guide
 
 *Goal: On-device intelligence that personalizes navigation without compromising privacy.*
 
@@ -106,10 +146,10 @@ Every feature in NaviEU maps to one of four strategic pillars:
 - [ ] **Adaptive ETA Prediction** — Context-aware arrival times based on terrain, weather patterns, personal pace
 
 ### Enhanced Exploration Intelligence
-- [ ] **Exploration Goals** — "Visit 80% of Paris 4th arrondissement" with progress tracking
 - [ ] **Trail Completion System** — Track completion of hiking trails, cycling routes, city walks
 - [ ] **Personal Exploration Stats** — Lifetime distance, countries visited, unique trails completed
 - [ ] **Seasonal Recommendations** — Local AI suggests activities based on season and location
+- [ ] **Trail Difficulty Estimation** — AI-calculated difficulty based on elevation, surface, and user fitness
 
 ### European Integration
 - [ ] **European Long-Distance Trails** — E-paths (E1, E2, E3...), GR routes, national cycle networks
@@ -119,22 +159,22 @@ Every feature in NaviEU maps to one of four strategic pillars:
 
 ### Advanced Features
 - [ ] **Offline Satellite Imagery** — Cached satellite views for key regions
-- [ ] **3D Terrain Visualization** — Elevation-aware map rendering
 - [ ] **Indoor Navigation** — Transit hub and airport indoor maps where available
 - [ ] **Wearable Support** — Companion app for Wear OS and watchOS
+- [ ] **Integration with External Sensors** — Heart rate, cadence, temperature for activity tracking
 
-**Target Release:** Q2 2026  
-**Depends on:** V2 stable release, TensorFlow Lite integration
+**Target Release:** Q2 2026
+**Depends on:** V3 stable release, TensorFlow Lite integration
 
 ---
 
-## 🔮 V4 — Mesh Navigation Layer
+## 🔮 V5 — Mesh Navigation Layer
 
 *Goal: Decentralized navigation infrastructure that works when all else fails.*
 
 **Status:** Vision phase — architectural exploration, RFCs welcome
 
-> V4 represents NaviEU's most ambitious vision: a navigation network that functions entirely through peer-to-peer mesh communication, enabling coordination, safety, and shared intelligence without any central infrastructure.
+> V5 represents NaviEU's most ambitious vision: a navigation network that functions entirely through peer-to-peer mesh communication, enabling coordination, safety, and shared intelligence without any central infrastructure.
 
 ### Reticulum Protocol Integration
 - [ ] **Reticulum Stack** — Integrate [Reticulum](https://github.com/markqvist/Reticulum) for cryptographic mesh networking
@@ -166,8 +206,8 @@ Every feature in NaviEU maps to one of four strategic pillars:
 - [ ] **Store-and-Forward** — Delayed message delivery when recipients are temporarily out of range
 - [ ] **Mesh Density Mapping** — Visualize mesh coverage and node density
 
-**Target Release:** 2027  
-**Depends on:** Reticulum maturity, hardware availability, V3 stable
+**Target Release:** 2027
+**Depends on:** Reticulum maturity, hardware availability, V4 stable
 
 ---
 
