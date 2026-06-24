@@ -1,0 +1,88 @@
+# Flutter/Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+**/doc/api/
+
+# Android
+android/.gradle/
+android/captures/
+android/gradlew
+android/gradlew.bat
+android/local.properties
+android/key.properties
+android/**/*.keystore
+android/**/*.jks
+
+# iOS
+ios/Flutter/.last_build_id
+ios/.symlinks/
+ios/Pods/
+ios/Runner.xcworkspace/
+ios/DerivedData/
+ios/.generated/
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/*.xcuserstate
+ios/*.xccheckout
+ios/*.moved-aside
+ios/*.xcuserdatad/
+
+# macOS
+macos/Flutter/ephemeral/
+macos/Pods/
+
+# Linux
+linux/flutter/ephemeral/
+
+# Windows
+windows/flutter/ephemeral/
+
+# IDEs
+.idea/
+.vscode/settings.json
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+
+# Test coverage
+coverage/
+*.lcov
+
+# Temporary files
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Large test fixtures (tracked via Git LFS)
+test/fixtures/large/
+
+# Local environment
+.env
+.env.local
+*.secret
+
+# Firebase / crashlytics (if ever used)
+google-services.json
+GoogleService-Info.plist
+
+# Fastlane
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots/
+**/fastlane/test_output/
