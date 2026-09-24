@@ -6,6 +6,32 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ---
 
+## [0.2.1] — 2025-06-24
+
+### 🗻 3D Terrain Fixes
+
+- **Fixed raster tile loading** — Replaced invalid `{s}` subdomain placeholder with explicit tile URLs (CartoDB a/b/c/d) that MapLibre GL correctly resolves
+- **Removed invalid `{r}` retina placeholder** — Caused 404s on raster tiles; now serves standard resolution tiles reliably
+- **Added error boundary** — 3D map now shows friendly retry UI instead of blank screen when terrain data fails to load
+- **Added dark mode toggle** — Switch between light (Voyager) and dark (Dark Matter) base maps in 3D mode
+- **Improved hillshade contrast** — Separate shadow/highlight values for dark vs light themes
+- **Graceful building layer fallback** — OpenFreeMap vector tiles no longer block map initialization if they fail
+
+### 🛡️ Auto-Clear Privacy Mode
+
+- **"Auto-clear after use" toggle** — New privacy setting in Settings → Privacy panel
+- **One-switch data destruction** — When enabled, automatically wipes ALL local data after every search, completed navigation, or stopped trail recording
+- **What gets wiped** — Trail sessions, explored cells, achievements, search history, route data, user profile, IndexedDB records
+- **Preserved settings** — The auto-clear toggle itself and onboarding status survive the wipe so the feature stays enabled
+- **Immediate page reload** — Clean in-memory state after wipe; no stale data lingering in React state
+
+### 🐛 Bug Fixes
+
+- Fixed `maybeWipe` hoisting error causing TypeScript build failure
+- Fixed unused `setShowBuildings` variable in Terrain3D
+
+---
+
 ## [0.2.0] — 2025-06-24
 
 ### 🗻 3D Terrain Visualization
