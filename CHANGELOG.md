@@ -17,6 +17,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - **Improved hillshade contrast** — Separate shadow/highlight values for dark vs light themes
 - **Graceful building layer fallback** — OpenFreeMap vector tiles no longer block map initialization if they fail
 
+### 🚆 Public Transport Live Arrivals
+
+- **TfL Unified API integration (UK / London)** — Free, no API key required. Live arrivals for Tube, bus, DLR, Overground, Elizabeth line, and tram
+- **v6.db.transport.rest integration (Czech Republic / EU)** — Free, no API key required. Live train, tram, and bus departures across Europe including České dráhy
+- **Auto-detect region** — Automatically switches between UK and Czech APIs based on GPS coordinates
+- **Manual region override** — Force UK, Czech, or auto-detect mode from the panel
+- **Nearby stops discovery** — Finds stops/stations within 500m (UK) or 5km (Czech) of your location
+- **Live arrival countdowns** — Real-time "Due", "2 min", "5 min" countdowns that refresh every 30 seconds
+- **Line status overview (UK)** — Full Tube, DLR, Overground, and Elizabeth line status at a glance
+- **Platform & delay info (Czech/EU)** — Shows platform numbers, delays in minutes, and cancellation status
+- **Colour-coded line badges** — Authentic TfL line colours for instant route recognition
+- **Stop detail view** — Tap any stop to see all incoming services sorted by arrival time
+
 ### 🛡️ Auto-Clear Privacy Mode
 
 - **"Auto-clear after use" toggle** — New privacy setting in Settings → Privacy panel
@@ -112,6 +125,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Trail recording accuracy depends on device GPS hardware quality
 - Offline map downloads require initial internet connection
 - 3D buildings visible at zoom 15+, terrain visible at zoom 11+
+- Public transport requires internet connection (live API data)
+- Czech city transport (Prague trams/buses) limited to train stations via DB REST; full PID city coverage requires Golemio API key
 
 ---
 
