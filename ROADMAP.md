@@ -1,7 +1,7 @@
 # NaviEU Product Roadmap
 
 > **Last Updated:** 2026-06-24
-> **Status:** V1 Released (v0.1.0) — V2 Released (v0.2.0) — V3 In Planning
+> **Status:** V1 Released (v0.1.0) — V2 Released (v0.2.0) — V2.x Released (v0.2.1) — V3 In Planning
 
 This roadmap outlines NaviEU's development trajectory. It is a living document — priorities evolve based on community feedback, contributor availability, and technical discovery.
 
@@ -84,12 +84,32 @@ Every feature in NaviEU maps to one of four strategic pillars:
 - [x] Settings menu with customizable preferences
 - [x] NaviBot assistant for guidance
 
-### V2.x Maintenance Track
+---
 
-| Version | Focus | Target |
-|---------|-------|--------|
-| v0.2.1 | Bug fixes, map stability improvements | July 2025 |
-| v0.2.2 | Additional basemap layers, UI refinements | August 2025 |
+## ✅ V2.x — Maintenance & Public Transport (Released: v0.2.1)
+
+### 🗻 3D Terrain Fixes
+- [x] Fixed raster tile loading ({s} → explicit subdomains)
+- [x] Removed invalid {r} retina placeholder
+- [x] Added error boundary with retry UI
+- [x] Added dark mode toggle for 3D maps
+- [x] Graceful building layer fallback
+
+### 🚆 Public Transport Live Arrivals
+- [x] TfL Unified API integration (UK / London) — Tube, bus, DLR, Overground, Elizabeth line, tram
+- [x] v6.db.transport.rest integration (Czech Republic / EU trains)
+- [x] Auto-detect region from GPS coordinates
+- [x] Manual region override (UK / Czech / Auto)
+- [x] Nearby stops discovery
+- [x] Live arrival countdowns with auto-refresh
+- [x] Line status overview for UK
+- [x] Platform & delay info for Czech/EU
+- [x] Colour-coded line badges
+
+### 🛡️ Privacy Enhancements
+- [x] "Auto-clear after use" toggle
+- [x] One-switch data destruction after search / navigation / trail
+- [x] Wipes trails, explored cells, achievements, history, profile, routes
 
 ---
 
@@ -106,6 +126,13 @@ Every feature in NaviEU maps to one of four strategic pillars:
 - [ ] **Route Sharing** — Share routes via QR code, local network (no internet), or file export
 - [ ] **Route Collections** — Save and organize favorite routes into folders
 - [ ] **Breadcrumb Navigation** — Drop waypoints and navigate back without a planned route
+
+### Public Transport v2
+- [ ] **Journey Planner** — Plan A-to-B trips combining walking + public transport
+- [ ] **Czech PID City Transport** — Full Prague tram/bus/metro coverage via Golemio API
+- [ ] **More European Cities** — Berlin (BVG), Vienna (Wiener Linien), Paris (RATP), Amsterdam (GVB)
+- [ ] **Saved PT Stops** — Bookmark frequently used stops for instant arrival checks
+- [ ] **Service Alert Notifications** — Push alerts for delays on favourite lines
 
 ### Exploration Mode
 - [ ] **Wander Mode UI** — Map-centric interface optimized for destination-free exploration
